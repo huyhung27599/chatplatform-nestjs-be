@@ -1,4 +1,5 @@
 import { GroupMessageAttachment, MessageAttachment, User } from './typeorm';
+import { Request } from 'express';
 
 export type FriendRequestStatus = 'accepted' | 'pending' | 'rejected';
 
@@ -47,3 +48,12 @@ export type UpdateStatusMessageParams = {
   user: User;
   statusMessage: string;
 };
+
+export type ValidateUserDetails = {
+  username: string;
+  password: string;
+};
+
+export interface AuthenticationRequest extends Request {
+  user: User;
+}

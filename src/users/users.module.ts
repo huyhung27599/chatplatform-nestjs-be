@@ -8,13 +8,18 @@ import { ImageStorageModule } from 'src/image-storage/image-storage.module';
 import { UserProfileService } from './services/user-profile.service';
 import { UserProfilesController } from './controllers/user-profile.controller';
 import { UserPresenceService } from './services/user-presence.service';
+import { UserPresenceController } from './controllers/user-presence.controller';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([User, Peer, UserPresence, Profile]),
     ImageStorageModule,
   ],
-  controllers: [UsersController, UserProfilesController],
+  controllers: [
+    UsersController,
+    UserProfilesController,
+    UserPresenceController,
+  ],
   providers: [
     {
       provide: Services.USERS,

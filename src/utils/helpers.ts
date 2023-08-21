@@ -12,3 +12,7 @@ export async function hashPassword(rawPassword) {
 }
 
 export const generateUUIDV4 = () => uuidv4();
+
+export async function compareHash(rawPassword: string, hashedPassword: string) {
+  return bcrypt.compare(rawPassword, hashedPassword);
+}

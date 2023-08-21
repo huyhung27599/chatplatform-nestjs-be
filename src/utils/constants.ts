@@ -4,10 +4,12 @@ export enum Services {
   USERS = 'USERS_SERVICE',
   USERS_PROFILES = 'USERS_PROFILES_SERVICE',
   USER_PRESENCE = 'USER_PRESENCE_SERVICE',
+  AUTH = 'AUTH_SERVICE',
 }
 
 export enum Routes {
   USERS = 'users',
   USERS_PROFILES = 'users/profiles',
   USER_PRESENCE = 'users/presence',
+  AUTH = 'auth',
 }
