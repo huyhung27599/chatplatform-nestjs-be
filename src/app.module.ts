@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UsersModule } from './users/users.module';
 import entities from './utils/typeorm';
 
 let envFilePath = '.env.development';
@@ -22,6 +23,7 @@ if (process.env.ENVIRONMENT === 'PRODUCTION') envFilePath = '.env.production';
       entities,
       logging: false,
     }),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

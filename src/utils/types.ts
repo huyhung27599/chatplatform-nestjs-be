@@ -1,4 +1,4 @@
-import { GroupMessageAttachment, MessageAttachment } from './typeorm';
+import { GroupMessageAttachment, MessageAttachment, User } from './typeorm';
 
 export type FriendRequestStatus = 'accepted' | 'pending' | 'rejected';
 
@@ -18,4 +18,32 @@ export type UploadGroupMessageAttachmentParams = {
 export type UploadImageParams = {
   key: string;
   file: Express.Multer.File;
+};
+
+export type CreateUserDetails = {
+  username: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+};
+
+export type FindUserParams = Partial<{
+  id: number;
+  email: string;
+  username: string;
+}>;
+
+export type FindUserOptions = Partial<{
+  selectAll: boolean;
+}>;
+
+export type UpdateUserProfileParams = Partial<{
+  about: string;
+  banner: Express.Multer.File;
+  avatar: Express.Multer.File;
+}>;
+
+export type UpdateStatusMessageParams = {
+  user: User;
+  statusMessage: string;
 };

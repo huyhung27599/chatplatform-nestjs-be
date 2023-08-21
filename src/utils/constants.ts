@@ -1,4 +1,13 @@
 export enum Services {
   SPACES_CLIENT = 'SPACES_CLIENT',
   IMAGE_UPLOAD_SERVICE = 'IMAGE_UPLOAD_SERVICE',
+  USERS = 'USERS_SERVICE',
+  USERS_PROFILES = 'USERS_PROFILES_SERVICE',
+  USER_PRESENCE = 'USER_PRESENCE_SERVICE',
+}
+
+export enum Routes {
+  USERS = 'users',
+  USERS_PROFILES = 'users/profiles',
+  USER_PRESENCE = 'users/presence',
 }
