@@ -7,6 +7,7 @@ export enum Services {
   USERS_PROFILES = 'USERS_PROFILES_SERVICE',
   USER_PRESENCE = 'USER_PRESENCE_SERVICE',
   AUTH = 'AUTH_SERVICE',
+  FRIENDS_SERVICE = 'FRIENDS_SERVICE',
 }
 
 export enum Routes {
@@ -14,6 +15,11 @@ export enum Routes {
   USERS_PROFILES = 'users/profiles',
   USER_PRESENCE = 'users/presence',
   AUTH = 'auth',
+  FRIENDS = 'friends',
+}
+
+export enum ServerEvents {
+  FRIEND_REMOVED = 'friend.removed',
 }
 
 export const UserProfileFileFields: MulterField[] = [

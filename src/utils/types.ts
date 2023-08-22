@@ -62,3 +62,8 @@ export type UserProfileFiles = Partial<{
   banner: Express.Multer.File[];
   avatar: Express.Multer.File[];
 }>;
+
+export type DeleteFriendRequestParams = {
+  id: number;
+  userId: number;
+};

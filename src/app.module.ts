@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import entities from './utils/typeorm';
 import { AuthModule } from './auth/auth.module';
+import { FriendsModule } from './friends/friends.module';
 
 let envFilePath = '.env.development';
 if (process.env.ENVIRONMENT === 'PRODUCTION') envFilePath = '.env.production';
@@ -26,6 +27,7 @@ if (process.env.ENVIRONMENT === 'PRODUCTION') envFilePath = '.env.production';
     }),
     UsersModule,
     AuthModule,
+    FriendsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
