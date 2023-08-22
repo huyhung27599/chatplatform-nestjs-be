@@ -57,3 +57,8 @@ export type ValidateUserDetails = {
 export interface AuthenticationRequest extends Request {
   user: User;
 }
+
+export type UserProfileFiles = Partial<{
+  banner: Express.Multer.File[];
+  avatar: Express.Multer.File[];
+}>;
