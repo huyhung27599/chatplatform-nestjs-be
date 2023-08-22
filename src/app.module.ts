@@ -7,6 +7,12 @@ import { UsersModule } from './users/users.module';
 import entities from './utils/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { FriendsModule } from './friends/friends.module';
+import { ThrottlerModule } from '@nestjs/throttler';
+import { GatewayModule } from './gateway/gateway.module';
+import { APP_GUARD } from '@nestjs/core';
+import { ThrottlerBehindProxyGuard } from './utils/throttler';
+import { EventsModule } from './events/events.module';
+import { EventEmitterModule } from '@nestjs/event-emitter';
 
 let envFilePath = '.env.development';
 if (process.env.ENVIRONMENT === 'PRODUCTION') envFilePath = '.env.production';
@@ -28,8 +34,21 @@ if (process.env.ENVIRONMENT === 'PRODUCTION') envFilePath = '.env.production';
     UsersModule,
     AuthModule,
     FriendsModule,
+    ThrottlerModule.forRoot({
+      ttl: 10,
+      limit: 10,
+    }),
+    GatewayModule,
+    EventsModule,
+    EventEmitterModule.forRoot(),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: ThrottlerBehindProxyGuard,
+    },
+  ],
 })
 export class AppModule {}

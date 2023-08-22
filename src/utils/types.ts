@@ -1,4 +1,9 @@
-import { GroupMessageAttachment, MessageAttachment, User } from './typeorm';
+import {
+  Friend,
+  GroupMessageAttachment,
+  MessageAttachment,
+  User,
+} from './typeorm';
 import { Request } from 'express';
 
 export type FriendRequestStatus = 'accepted' | 'pending' | 'rejected';
@@ -65,5 +70,10 @@ export type UserProfileFiles = Partial<{
 
 export type DeleteFriendRequestParams = {
   id: number;
+  userId: number;
+};
+
+export type RemoveFriendEventPayload = {
+  friend: Friend;
   userId: number;
 };
