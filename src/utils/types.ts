@@ -1,5 +1,6 @@
 import {
   Friend,
+  FriendRequest,
   GroupMessageAttachment,
   MessageAttachment,
   User,
@@ -76,4 +77,24 @@ export type DeleteFriendRequestParams = {
 export type RemoveFriendEventPayload = {
   friend: Friend;
   userId: number;
+};
+
+export type FriendRequestParams = {
+  id: number;
+  userId: number;
+};
+
+export type AcceptFriendRequestResponse = {
+  friend: Friend;
+  friendRequest: FriendRequest;
+};
+
+export type CancelFriendRequestParams = {
+  id: number;
+  userId: number;
+};
+
+export type CreateFriendParams = {
+  user: User;
+  username: string;
 };
