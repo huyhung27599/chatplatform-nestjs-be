@@ -14,6 +14,7 @@ import { ThrottlerBehindProxyGuard } from './utils/throttler';
 import { EventsModule } from './events/events.module';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { FriendRequestsModule } from './friend-requests/friend-requests.module';
+import { ConversationsModule } from './conversations/conversations.module';
 
 let envFilePath = '.env.development';
 if (process.env.ENVIRONMENT === 'PRODUCTION') envFilePath = '.env.production';
@@ -36,6 +37,7 @@ if (process.env.ENVIRONMENT === 'PRODUCTION') envFilePath = '.env.production';
     AuthModule,
     FriendsModule,
     FriendRequestsModule,
+    ConversationsModule,
     ThrottlerModule.forRoot({
       ttl: 10,
       limit: 10,

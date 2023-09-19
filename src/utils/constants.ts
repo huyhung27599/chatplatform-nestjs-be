@@ -10,6 +10,7 @@ export enum Services {
   FRIENDS_SERVICE = 'FRIENDS_SERVICE',
   GATEWAY_SESSION_MANAGER = 'GATEWAY_SESSION_MANAGER',
   FRIENDS_REQUESTS_SERVICE = 'FRIEND_REQUEST_SERVICE',
+  CONVERSATIONS = 'CONVERSATIONS_SERVICE',
 }
 
 export enum Routes {
@@ -19,6 +20,7 @@ export enum Routes {
   AUTH = 'auth',
   FRIENDS = 'friends',
   FRIEND_REQUESTS = 'friends/requests',
+  CONVERSATIONS = 'conversations',
 }
 
 export enum ServerEvents {

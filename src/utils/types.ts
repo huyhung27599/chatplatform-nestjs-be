@@ -2,6 +2,7 @@ import {
   Friend,
   FriendRequest,
   GroupMessageAttachment,
+  Message,
   MessageAttachment,
   User,
 } from './typeorm';
@@ -98,3 +99,27 @@ export type CreateFriendParams = {
   user: User;
   username: string;
 };
+
+export type CreateConversationParams = {
+  username: string;
+  message: string;
+};
+
+export type AccessParams = {
+  id: number;
+  userId: number;
+};
+
+export type GetConversationMessagesParams = {
+  id: number;
+  limit: number;
+};
+
+export type UpdateConversationParams = Partial<{
+  id: number;
+  lastMessageSent: Message;
+}>;
+
+export interface AuthenticatedRequest extends Request {
+  user: User;
+}
